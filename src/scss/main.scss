@@ -1,13 +1,106 @@
 @import '_variables'; //引入全域變數
-//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap'); //引入google font
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-
-@import 'demo.scss'; //引入demo.scss
-
-body{
-    color:  var(--primary);
+//resert css
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-// body{
-//     background-image: url(../img/demo.png);
-// }
+a {
+    text-decoration: none;
+}
+
+
+header {
+    height: 100vh;
+    background-image: url(../img/header_bg/bg-32.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; // 通常會置中
+
+    >nav {
+        padding: 0 35px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        ul.nav_left {
+            display: flex;
+            margin-top: 19px;
+            gap: 2px;
+
+            .nav_menu {
+                display: none;
+                position: absolute;
+                padding-top: 15px;
+                width: 150px;
+
+                a {
+                    display: block;
+                    background-color: #f8f8f8;
+                    padding: 10px 20px;
+                    font-size: 14px;
+                    color: black;
+
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+            }
+
+            li {
+                border-radius: 10px;
+
+                >a {
+                    color: white;
+                    font-weight: bolder;
+                    font-size: 16px;
+                    display: block;
+                    padding: 4px 10px;
+                }
+                
+            }
+            .li_red:hover {
+                background-color: #d01a48;
+                .nav_menu {
+                    display: block;
+                }
+            }
+            .li_yellow:hover {
+                background-color: #cc9650;
+                .nav_menu {
+                    display: block;
+                }
+            }
+            .li_green:hover {
+                background-color: #73bf00;
+                .nav_menu {
+                    display: block;
+                }
+            }
+
+            
+        }
+
+        ul.nav_right {
+            display: flex;
+            margin-top: 19px;
+            margin-left: auto;
+            gap: 10px;
+            img {
+                width: 30px;
+            }
+        }
+
+        .nav_search {
+            margin-top: 19px;
+        }
+    }
+}
+
+img.header_logo {
+    height: 60px;
+}
