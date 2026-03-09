@@ -26,7 +26,10 @@ header {
         display: flex;
         align-items: center;
         gap: 15px;
-
+        .header_logo{
+            height: 60px;
+            margin-top: 5px;
+        }
         ul.nav_left {
             display: flex;
             margin-top: 19px;
@@ -97,10 +100,75 @@ header {
 
         .nav_search {
             margin-top: 19px;
+            text-indent: -9999px;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background-image: url(../img/search.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
+    }
+    .bottom_area{
+        position: absolute;
+        color: #fff;
+        height: 240px;
+        width: 100%;
+        max-width: 800px;
+        padding-left: 33px;
+        left: 0;
+        bottom: 0;
+        background-image: url(../img/header_red_bg.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        h1{
+            position: absolute;
+            top: -30%;
+            font-size: 39px;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+        p{
+            width: 40%;
+            position: absolute;
+            top: 10%;
+            line-height: 27px;
+        }
+        a{
+            display: block;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 108px;
+            height: 36px;
+            color: #fff;
+            line-height: 36px;
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+            bottom: 24px;
+            &:hover{
+                background-color: #fff;
+                color: #bf1a43;
+            }
+        }
+    }
+    .go_down{
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        width: 136px;
+        margin-left: -50px;
+        height: 47px;
+        background-image: url(../img/go_down.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-indent: -9999px;
     }
 }
 
-img.header_logo {
-    height: 60px;
+.public_icon{
+    width: 30px;
 }
