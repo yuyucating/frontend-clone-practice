@@ -9,8 +9,11 @@
 <body>
     <header>
         <nav>
-            <a href="#"><img class="header_logo" src="img/logo.svg" alt=""></a>
-            <ul class="nav_left">
+            <a href="#">
+                <img class="header_logo" src="img/logo.svg" alt="">
+                <img class="header_logo_m" src="img/logo_m.svg" alt="">
+            </a>
+            <ul id="navbarCollapse" class="nav_left navbar-collapse collapse">
                 <li class="li_red">
                     <a href="#">關於我們</a>
                     <div class="nav_menu">
@@ -90,6 +93,15 @@
                 <li><a href="#" class="public_icon"><img src="img/sns/icon_yt.png" alt="youtube"></a></li>
                 <li><a href="#" class="public_icon"><img src="img/sns/icon_line.png" alt="line"></a></li>
             </ul>
+            <div class="nav_mobile" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <div class= "menu">
+                    <div class="line line0"></div>
+                    <div class="line_parent">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+                </div>
+            </div>
             <div class="nav_search">Search</div>
         </nav>
         <div class="bottom_area">
