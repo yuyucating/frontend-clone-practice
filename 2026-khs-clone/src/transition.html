@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        .wrap{
+            margin: 30px auto;
+            max-width: 800px;
+            width: 100%;
+            background-color: #e4f0f0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            
+        }
+        .box{
+            background-color: #bb8f88;
+            width: 100px;
+            height: 100px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box:hover.scale{
+            transform: scale(1.2, 1.2);
+        }
+        .box:hover.scaleX{
+            transform: scaleX(1.2);
+        }
+        .box:hover.scaleY{
+            transform: scaleY(1.2);
+        }
+        .box:hover.translateX{
+            transform: translateX(20px);
+        }
+        .box:hover.translateY{
+            transform: translateY(20px);
+        }
+        .box:hover.translate{
+            transform: translate(20px, 20px);
+        }
+        .box:hover.matrix{
+            transform: matrix(1, 2, -1, 1, 80, 80);
+        }
+        .box:hover.matrix3d{
+            transform: matrix3d(
+                0.5,
+                0,
+                -0.866025,
+                0,
+                0.595877,
+                1.2,
+                -1.03209,
+                0,
+                0.866025,
+                0,
+                0.5,
+                0,
+                25.9808,
+                0,
+                15,
+                1
+            );
+        }
+        .box:hover.rotate{
+            transform: rotate(45deg);
+        }
+        .box:hover.skew{
+            transform: skew(15deg, 15deg);
+        }
+        .box:hover.skewX{
+            transform: skewX(15deg);
+        }
+        .box:hover.skewY{
+            transform: skewY(15deg);
+        }
+        .box:hover.transition{
+            transform: scale(1.2, 1.2);
+            transition: transform 0.5s ease;
+        }
+        .box:hover.multi{
+            transform: rotate(45deg) skewY(15deg) scaleY(0.5);
+        }
+        .cross{
+            background-color: #d7e4e4;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            position: relative;
+        }
+        .line1, .line2{
+            width: 150px;
+            height: 10px;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .line1{
+            transform: translateX(-50%) translateY(-200%);
+            transition: transform 0.3s ease;
+        }
+        .line2{
+            transform: translateX(-50%) translateY(200%);
+            transition: transform 0.3s ease;
+        }
+        .cross:hover .line1{
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .cross:hover .line2{
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box scale">scale</div>
+        <div class="box scaleX">scaleX</div>
+        <div class="box scaleY">scaleY</div>
+        <div class="box translateX">translateX</div>
+        <div class="box translateY">translateY</div>
+        <div class="box translate">translate</div>
+        <div class="box matrix">matrix</div>
+        <div class="box rotate">rotate</div>
+        <div class="box skew">skew</div>
+        <div class="box skewX">skewX</div>
+        <div class="box skewY">skewY</div>
+        <div class="box matrix3d">matrix3d</div>
+        <div class="box">translate3d</div>
+        <div class="box">rotateX</div>
+        <div class="box">rotateY</div>
+        <div class="box transition">scale w/ transition</div>
+        <div class="box">other</div>
+        <div class="box multi">multi</div>
+    </div>
+    <div class="cross">
+        <div class="line1"></div>
+        <div class="line2"></div>
+    </div>
+</body>
+</html>
