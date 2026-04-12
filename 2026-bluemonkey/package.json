@@ -9,7 +9,7 @@
     "deploy": "rimraf dist && vite build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.16",
+    "@tailwindcss/postcss": "^4.2.2",
     "axios": "^1.6.5",
     "dotenv": "^16.3.2",
     "glob": "^10.3.10",
@@ -17,5 +17,10 @@
     "sass": "^1.69.6",
     "vite": "^5.0.10",
     "vite-plugin-ejs": "^1.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
   }
 }
