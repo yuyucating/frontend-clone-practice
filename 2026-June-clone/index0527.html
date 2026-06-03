@@ -13,7 +13,9 @@
     <style>
         * {
             box-sizing: border-box;
+            text-decoration: none;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -22,6 +24,7 @@
 
         header {
             position: fixed;
+            z-index: 9999;
             width: 100%;
             padding: 1rem 2rem;
             display: flex;
@@ -43,8 +46,8 @@
         header ul li a {
             color: #192923;
             font-weight: bold;
-            text-decoration: none;
         }
+
         header h1 {
             flex: 1;
             margin: 0;
@@ -56,29 +59,27 @@
             flex: 1;
         }
 
-        header div>a{
+        header div>a {
             color: #192923;
             font-weight: bold;
-            text-decoration: none;
             margin-left: auto;
         }
-        header div>a:last-child{
+
+        header div>a:last-child {
             margin-left: 2rem;
             background-color: #192923;
             color: white;
             padding: 0.5rem 1rem;
         }
-        header div:last-child{
+
+        header div:last-child {
             display: flex;
             align-items: center;
         }
 
         main {
-            padding: 4rem 1rem 1rem 1rem;
-        }
-
-        main section {
-            margin: 0 1rem 3rem 1rem;
+            padding: 4rem 2rem 1rem 2rem;
+            position: relative;
         }
 
         .inline_title {
@@ -90,16 +91,107 @@
             margin: 0;
             font-size: 5rem;
             font-family: "Caramel", cursive;
+            line-height: 4rem;
         }
 
         .inline_title a {
             margin-left: auto;
             margin-top: auto;
             margin-bottom: 1rem;
-            text-decoration: none;
             color: #192923;
             font-weight: bold;
         }
+
+        main>section {
+            margin-bottom: 4rem;
+        }
+
+        .hero_section {
+            margin-top: 3rem;
+            width: 100%;
+            height: 33.33vw;
+            min-height: 24rem;
+            border-radius: 2rem;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 75%), url(img/jplenio-nature-3082832.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            padding: 4rem;
+        }
+
+        .hero_section p {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .hero_section .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero_section .buttons a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .hero_section .buttons a:first-child {
+            background-color: #192923;
+            color: #fff;
+        }
+
+        .hero_section .buttons a:last-child {
+            background-color: transparent;
+            border: 2px solid #192923;
+            color: #192923;
+        }
+
+        .about_section {
+            display: flex;
+            gap: 12rem;
+            margin-top: 4rem;
+        }
+        .about_section div {
+            flex: 1;
+            border-radius: 2rem;
+        }
+
+        .about_section h2{
+            margin-left: 2rem;
+            margin-top: 2rem;
+        }
+        .about_section>div>p {
+            font-size: 1.25rem;
+            margin: 2rem;
+        }
+
+        .about_section .items {
+            display: flex;
+            gap: 2rem;
+            margin: 0 2rem 0 2rem;
+        }
+
+        .about_section .items>div {
+            text-align: center;
+        }
+
+        .about_section .wood_img {
+            background-image: url(img/juncala-forest-7406241.jpg);
+    background-size: cover;
+    background-position: center;
+            
+        }
+
+        .about_section .items p {
+            margin: 0;
+        }
+
+        .journal_section .inline_title {
+            margin-bottom: 2rem;
+        }
+        
         .journal_section .cards {
             display: flex;
             gap: 2rem;
@@ -140,7 +232,6 @@
             display: inline-block;
             color: #45351a;
             font-weight: bold;
-            text-decoration: none;
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
@@ -151,9 +242,6 @@
             object-fit: cover;
 
         }
-
-        
-
 
 
         footer {
@@ -206,7 +294,6 @@
 
         footer ul li a {
             color: white;
-            text-decoration: none;
         }
 
         footer .news p {
@@ -296,20 +383,55 @@
         </div>
     </header>
     <main>
-        <div></div>
-        <div></div>
+        <section class="hero_section">
+            <div class="inline_title">
+                <h2 class="main_title">A place<br>to do less.</h2>
+            </div>
+            <p>Cold mornings, warm windows, <br>and a long way from anyway.</p>
+            <div class="buttons">
+                <a href="#">BOOK A STAY</a>
+                <a href="#">EXPLORE THE CABINS</a>
+            </div>
+            <div class="cover"></div>
+        </section>
+        <section class="about_section">
+            <div>
+                <div class="inline_title">
+                    <h2>Not a hotel.<br>A cleaning<br>in the woods.</h2>
+                </div>
+                <p>No front desk. No restaurant. No schedule. Six cabins in a clearing in Telemark, Norway: a wood-fired sauna at the water, a cold lake past the pines, and marked trails through birch and spruce. The hours between them are yours.</p>
+                <div class="items">
+                    <div>
+                        <img src="img/sauna.png" alt="">
+                        <p>SAUNA．80°C</p>
+                    </div>
+                    <div>
+                        <img src="img/lake.png" alt="">
+                        <p>LAKE．6°C</p>
+                    </div>
+                    <div>
+                        <img src="img/trails.png" alt="">
+                        <p>TRAILS．14 KM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wood_img"></div>
+        </section>
         <div></div>
         <div></div>
         <section class="journal_section">
             <div class="inline_title">
-                <h2>The journal</h2><a href="#">VIEW ALL ENTRIES ></a>
+                <h2>The journal</h2>
+                <a href="#">VIEW ALL ENTRIES ></a>
             </div>
             <div class="cards">
                 <div class="card">
                     <div class="card_left">
                         <div class="date">JAN 24, 2026</div>
                         <div class="title">How the sauna is run</div>
-                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before
+                            sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the
+                            door stays closed between sessions.</div>
                         <a href="#" class="more">READ MORE ></a>
                     </div>
                     <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
@@ -318,7 +440,9 @@
                     <div class="card_left">
                         <div class="date">JAN 24, 2026</div>
                         <div class="title">How the sauna is run</div>
-                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before
+                            sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the
+                            door stays closed between sessions.</div>
                         <a href="#" class="more">READ MORE ></a>
                     </div>
                     <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
@@ -327,7 +451,9 @@
                     <div class="card_left">
                         <div class="date">JAN 24, 2026</div>
                         <div class="title">How the sauna is run</div>
-                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before
+                            sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the
+                            door stays closed between sessions.</div>
                         <a href="#" class="more">READ MORE ></a>
                     </div>
                     <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
