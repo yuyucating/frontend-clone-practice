@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caramel&family=Caveat:wght@400..700&family=Chiron+GoRound+TC:wght@200..900&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Playwrite+NZ+Basic:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Elms Sans", sans-serif;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            background-color: #fff;
+            color: #192923;
+            text-align: center;
+            align-items: center;
+        }
+
+        header ul {
+            flex: 1;
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        header ul li a {
+            color: #192923;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        header h1 {
+            flex: 1;
+            margin: 0;
+            font-size: 3rem;
+            font-family: "Caramel", cursive;
+        }
+
+        header div {
+            flex: 1;
+        }
+
+        header div>a{
+            color: #192923;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: auto;
+        }
+        header div>a:last-child{
+            margin-left: 2rem;
+            background-color: #192923;
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+        header div:last-child{
+            display: flex;
+            align-items: center;
+        }
+
+        main {
+            padding: 4rem 1rem 1rem 1rem;
+        }
+
+        main section {
+            margin: 0 1rem 3rem 1rem;
+        }
+
+        .inline_title {
+            display: flex;
+            color: #192923;
+        }
+
+        .inline_title h2 {
+            margin: 0;
+            font-size: 5rem;
+            font-family: "Caramel", cursive;
+        }
+
+        .inline_title a {
+            margin-left: auto;
+            margin-top: auto;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #192923;
+            font-weight: bold;
+        }
+        .journal_section .cards {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .journal_section .card {
+            display: flex;
+            height: 20rem;
+            width: 24rem;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .journal_section .card .card_left {
+            padding: 1rem;
+            flex: 3;
+            min-width: 0;
+            background-color: #fff6e3;
+            color: #45351a;
+        }
+
+        .journal_section .card .card_left .date {
+            font-size: 1rem;
+        }
+
+        .journal_section .card .card_left .title {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: "Caramel", cursive;
+        }
+
+        .journal_section .card .card_left .card_description {
+            font-size: 0.875rem;
+        }
+
+        .journal_section .card .card_left .more {
+            display: inline-block;
+            color: #45351a;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .journal_section .card>img {
+            flex: 2;
+            min-width: 0;
+            object-fit: cover;
+
+        }
+
+        
+
+
+
+        footer {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            padding: 4rem 2rem 2rem 2rem;
+            border-radius: 2rem 2rem 0 0;
+            background-color: #6f7b76;
+            color: white;
+            text-align: left;
+        }
+
+        footer div {
+            flex: 1;
+        }
+
+        footer div.news {
+            flex: 3;
+        }
+
+        footer h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-family: "Caramel", cursive;
+        }
+
+        footer p.notation {
+            position: absolute;
+            margin: 0;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 1rem;
+        }
+
+        footer .title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .news p {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.5rem;
+            width: 66.67%;
+        }
+
+        footer .input-button {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        footer .input-button .input {
+            height: 2.5rem;
+            background-color: #6f7b76;
+            border: #fff solid 1px;
+            flex: 2;
+        }
+
+        footer .input-button .input input {
+            width: 100%;
+            height: 100%;
+            color: white;
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+
+        footer .input-button .button {
+            height: 2.5rem;
+            background-color: #fff;
+            color: #6f7b76;
+            flex: 1;
+        }
+
+        footer .input-button .button button {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #6f7b76;
+            font-weight: bold;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        footer .logobox {
+            position: absolute;
+            right: 2rem;
+            top: 4rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: auto;
+            gap: 0.5rem;
+        }
+
+        footer .logobox .logo {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        footer .logobox .logo img {
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <ul>
+                <li><a href="#">STAYS</a></li>
+                <li><a href="#">SAUNA</a></li>
+                <li><a href="#">GROUNDS</a></li>
+            </ul>
+        </div>
+        <h1>LUND</h1>
+        <div>
+            <a href="#">VISIT</a>
+            <a href="#">BOOK A STAY</a>
+        </div>
+    </header>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <section class="journal_section">
+            <div class="inline_title">
+                <h2>The journal</h2><a href="#">VIEW ALL ENTRIES ></a>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card_left">
+                        <div class="date">JAN 24, 2026</div>
+                        <div class="title">How the sauna is run</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <a href="#" class="more">READ MORE ></a>
+                    </div>
+                    <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
+                </div>
+                <div class="card">
+                    <div class="card_left">
+                        <div class="date">JAN 24, 2026</div>
+                        <div class="title">How the sauna is run</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <a href="#" class="more">READ MORE ></a>
+                    </div>
+                    <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
+                </div>
+                <div class="card">
+                    <div class="card_left">
+                        <div class="date">JAN 24, 2026</div>
+                        <div class="title">How the sauna is run</div>
+                        <div class="card_description">The lakeside sauna is wood-fired and lit twice a day, once before sunrise and once before dusk. A short piece on the schedule, the bench rotation, and why the door stays closed between sessions.</div>
+                        <a href="#" class="more">READ MORE ></a>
+                    </div>
+                    <img src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h1>LUND</h1>
+            <p class="notation">&#169 Lund 2026.<br>All right reserved.</p>
+        </div>
+        <div>
+            <div class="title">Title</div>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+                <li><a href="#">Item 6</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="title">Title</div>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="title">Title</div>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </div>
+        <div class="news">
+            <div class="title">NEWSLETTER</div>
+            <p>Notes from the property, season openings, and occassional pieces from the journal. Sent only when
+                there is something to send.</p>
+            <div class="input-button">
+                <div class="input">
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="button">
+                    <button>SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="logobox">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                            fill="#ffffff"></path>
+                        <path
+                            d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                            fill="#ffffff"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+                            fill="#ffffff"></path>
+                    </g>
+                </svg>
+            </div>
+            <p>Instagram</p>
+        </div>
+    </footer>
+</body>
+
+</html>
